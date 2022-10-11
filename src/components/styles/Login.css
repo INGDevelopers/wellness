@@ -1,0 +1,72 @@
+.login{
+    position: absolute;
+    
+    right: 5%;
+    width: 300px;
+    height: 550px;
+    font-size: 22px;
+    flex-direction: column;
+    
+    
+    top: 0%;
+    
+    }
+    
+    .registro{
+    font-size: 18px;
+    }
+    .correo{
+    width: 300px;
+    height: 60px;
+    border: none;
+    position: absolute;
+    top: 30%;
+    }
+    .contraseña{
+    width: 300px;
+    height: 60px;
+    border: none;
+    position: absolute;
+    top: 50%;   
+    }
+    .usuario{
+    
+        margin: 0;
+        position: absolute;
+        top: 25%;
+    
+    }
+    .contraseña-e{
+    position: absolute;
+    margin: 0%;
+    top: 45%;
+    
+    }
+    .entrar{
+        position: absolute;
+        width: 303px;
+        height: 50px;
+    top: 70%;
+    border: none;
+    font-size: 22px;
+    color: white;
+    background-color: #81C2FF;
+    }
+    .olvidado{
+        position: absolute;
+        top: 62%;
+        font-size: 15px;
+        text-decoration: none;
+        color: grey;
+    }
+    .registro{
+        position: absolute;
+        top: 90%;
+        font-size: 15px;
+        text-decoration: none;
+        color: grey;
+        left: 32%;
+    
+        
+    }
+    
