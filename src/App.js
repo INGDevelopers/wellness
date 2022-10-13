@@ -1,8 +1,8 @@
 import {
   BrowserRouter as Router,
   Routes,
-  Route
-
+  Route,
+  Navigate
 } from 'react-router-dom';
 
 
