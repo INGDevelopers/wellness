@@ -11,7 +11,7 @@ const Profile = () => {
   return(
     <div className="div-principal-profile">
       <div>
-        <button>Atras</button>
+        <button className="btn btn-primary">Atras</button>
       </div>
       <div>
         <idv className="profile-image">
@@ -19,7 +19,7 @@ const Profile = () => {
         </idv>
         <div className="profile-info">
           <h2>Andres Felipe Quintero Bautista</h2>
-          <button>Editar</button>
+          <button className="btn btn-primary">Editar</button>
         </div>
       </div>
 

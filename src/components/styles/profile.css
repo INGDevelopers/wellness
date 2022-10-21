@@ -1,6 +1,8 @@
 .div-principal-profile{
   height: 100vh;
   width: 100%;
+
+  margin-top: 75px;
 }
 
 .div-principal-profile .profile-image{
@@ -22,7 +24,6 @@
 
 .div-principal-profile .profile-info-data{
   display: grid;
-  margin: 0 auto;
   grid-template-columns: repeat(2, 1fr);
 
   margin-top: 50px;
