@@ -6,8 +6,9 @@ import {
 } from 'react-router-dom';
 
 import Profile from './containers/profile';
-import Login from './components/login';
+import Login from './containers/login';
 import History from './components/history';
+import Home from './containers/home';
 import './App.css';
 
 
@@ -17,8 +18,9 @@ function App() {
     <Router>
       <Routes>
         <Route path='/login' element={<Login />} />
-        <Route path='/history' element={<History/>} />
-        <Route path='/profile' element={<Profile/>} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/history' element={<History />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
     </Router>
   );
