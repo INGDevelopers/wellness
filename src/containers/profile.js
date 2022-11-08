@@ -1,17 +1,24 @@
-
+import {useState, useEffect} from 'react';
 
 import '../components/styles/profile.css';
+
+import NavBar from '../components/Navbar';
+
 import ProfileImg from '../images/profile.jpg';
 
 
 
 const Profile = () => {
 
+  useEffect(() => {
+    
+  });
 
   return(
     <div className="div-principal-profile">
-      <div>
-        <button className="btn btn-primary">Atras</button>
+      <NavBar/>
+      <div className='div-profile-button-before'>
+        <a href='/' className="button-primary">Atras</a>
       </div>
       <div>
         <idv className="profile-image">
@@ -19,7 +26,7 @@ const Profile = () => {
         </idv>
         <div className="profile-info">
           <h2>Andres Felipe Quintero Bautista</h2>
-          <button className="btn btn-primary">Editar</button>
+          <button className="button-primary">Editar</button>
         </div>
       </div>
 

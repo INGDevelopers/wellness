@@ -1,373 +1,72 @@
 import "../components/styles/home.css";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+
+import NavBar from '../components/Navbar';
+import CardI from '../components/card';
+
+
+
 function Home() {
+	const carsd = [
+		{
+			title: "Raqueta",
+			disp: 15,
+      inUse: 2
+		},
+		{
+			title: "Guitarra",
+			disp: 15,
+      inUse: 2
+		},
+		{
+			title: "B. de futbol",
+			disp: 15,
+      inUse: 2
+		},
+		{
+			title: "B. de futbol",
+			disp: 15,
+      inUse: 2
+		},
+		{
+			title: "B. de futbol",
+			disp: 15,
+      inUse: 2
+		}
+	]
 
-    return (
-
-        <>
-            <Navbar bg="light" expand="lg">
-                <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#link">Link</Nav.Link>
-                            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">
-                                    Another action
-                                </NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">
-                                    Separated link
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
-
-            <div className="items">
-
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
+	const inUse = [{
+		title: "Guitarra",
+		disp: 15,
+		inUse: 2
+	}];
 
 
-
-            </div>
-
-            <div className="items">
-
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-                <Card className="cards" style={{ width: '19rem', height: '300px' }}>
-
-                    <Card.Img variant="top" />
-                    <Card.Body>
-                        <Card.Title>Raqueta</Card.Title>
-                        <Card.Text>
-                            Some quick example text to build on the card title and make up the
-                            bulk of the card's content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-
-
-
-            </div>
-
-
-        </>
-
-    );
-
-
+	return (
+		<div className="div-home-principal">
+			<NavBar />
+			  <a className="button-primary" href="/history">Historial de Uso</a>
+				<h2>Instrumentos</h2>
+				<div className="div-home-items">
+					{
+						// Instrumentos en inventario
+						carsd.map((el, i) => (
+							<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
+						))
+					}
+				</div>
+				<h2>Instrumentos en uso</h2>
+				<div className="div-home-wrapp">
+					<div className="div-home-items">
+						{
+							// Instrumentos en inventario
+							inUse.map((el, i) => (
+								<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
+							))
+						}
+					</div>
+				</div>
+		</div>
+	);
 }
 
 

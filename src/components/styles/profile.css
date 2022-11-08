@@ -1,9 +1,9 @@
 .div-principal-profile{
   height: 100vh;
   width: 100%;
-
-  margin-top: 75px;
 }
+
+
 
 .div-principal-profile .profile-image{
   display: flex;
@@ -11,7 +11,8 @@
 }
 
 .div-principal-profile .profile-image img{
-  width: 25%;
+  width: 20%;
+  height: 20%;
   margin-bottom: 25px;
   border-radius: 50%;
 }
@@ -25,8 +26,11 @@
 .div-principal-profile .profile-info-data{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
   margin-top: 50px;
   text-align: center;
+}
+
+.div-principal-profile .div-profile-button-before, .div-principal-profile .profile-info button{
+  width: 100px;
 }
 
