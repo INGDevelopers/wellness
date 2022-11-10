@@ -19,10 +19,16 @@ function Login() {
             email: email,
             password: password
 
-        }).then((res, token) => {
-            console.log(res);
+        }).then((res) => {
 
-            sessionStorage.setItem('token', token);
+            console.log(res);
+            if (!res.success) {
+
+            } else {
+                sessionStorage.setItem('token', res.token);
+
+            }
+
 
         });
     }
