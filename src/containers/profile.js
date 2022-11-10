@@ -3,21 +3,32 @@ import {useState, useEffect} from 'react';
 import '../components/styles/profile.css';
 
 import NavBar from '../components/Navbar';
+import Table from '../components/table';
 
-import ProfileImg from '../images/profile.jpg';
+import ProfileImg from '../images/notFound.png';
 
+
+import users from '../config/users';
 
 
 const Profile = () => {
+  const [data, setData] = useState({});
+  const title = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
 
   useEffect(() => {
-    
-  });
+    const getApi = async()=>{
+      await users.getUserById().then((res) => {
+        setData(res.res);
+        console.log(res.res);
+      });
+    }
+    getApi();
+  },[]);
 
   return(
     <div className="div-principal-profile">
       <NavBar/>
-      <div className='div-profile-button-before'>
+      <div className='div-button-a'>
         <a href='/' className="button-primary">Atras</a>
       </div>
       <div>
@@ -25,7 +36,7 @@ const Profile = () => {
           <img src={ProfileImg}/>
         </idv>
         <div className="profile-info">
-          <h2>Andres Felipe Quintero Bautista</h2>
+          <h2>{data.name1} {data.name2} {data.lastName1} {data.lastName2}</h2>
           <button className="button-primary">Editar</button>
         </div>
       </div>
@@ -33,17 +44,22 @@ const Profile = () => {
       <div className='profile-info-data'>
         <div>
           <h4>Correo institucional</h4>
-          <h5>andres.quinteroba@campusucc.edu.co</h5>
+          <h5>{data.email}</h5>
         </div>
         <div>
           <h4>N. Horas</h4>
-          <h5>64</h5>
+          <h5>{data.nHours}</h5>
         </div>
       </div>
 
-      <div className="">
-
-      </div>
+			<div className="title">
+				<h2>Historial de usuarios</h2>
+				<h6>
+					Este historial contiene la informacion de todos los estudiantes y su
+					historial de instrumentos
+				</h6>
+			</div>
+      <Table table='history' title={title} field={'data.historyCreated'}/>
     </div>
   );
 

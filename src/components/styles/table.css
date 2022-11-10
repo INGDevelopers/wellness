@@ -1,0 +1,46 @@
+.History{
+  /* margin: 80px 70px 70px; */
+}
+  
+table {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: white;
+  border: 1px solid #1A2929;
+
+}
+
+td,
+th {
+  text-align: start;
+  padding: 8px;
+  border-right: 1px solid #1A2929;
+
+}
+
+td {
+  font-size: 12px;
+
+}
+
+
+thead th {
+
+  color: #ffffff;
+  background: #1A2929;
+
+
+
+}
+
+tr:nth-child(even) {
+
+  background: #9EDFD3;
+
+}

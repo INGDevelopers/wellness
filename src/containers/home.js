@@ -42,30 +42,35 @@ function Home() {
 
 
 	return (
-		<div className="div-home-principal">
+		<>
 			<NavBar />
-			  <a className="button-primary" href="/history">Historial de Uso</a>
-				<h2>Instrumentos</h2>
-				<div className="div-home-items">
-					{
-						// Instrumentos en inventario
-						carsd.map((el, i) => (
-							<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
-						))
-					}
-				</div>
-				<h2>Instrumentos en uso</h2>
-				<div className="div-home-wrapp">
+			<div className="div-button-a">
+				<a className="button-primary" href="/history">Historial de Uso</a>
+			</div>
+			<div className="div-home-principal">
+
+					<h2>Instrumentos</h2>
 					<div className="div-home-items">
 						{
 							// Instrumentos en inventario
-							inUse.map((el, i) => (
+							carsd.map((el, i) => (
 								<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
 							))
 						}
 					</div>
-				</div>
-		</div>
+					<h2>Instrumentos en uso</h2>
+					<div className="div-home-wrapp">
+						<div className="div-home-items">
+							{
+								// Instrumentos en inventario
+								inUse.map((el, i) => (
+									<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
+								))
+							}
+						</div>
+					</div>
+			</div>
+		</>
 	);
 }
 

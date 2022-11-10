@@ -7,8 +7,9 @@ import {
 
 import Profile from './containers/profile';
 import Login from './containers/login';
-import History from './components/history';
+import Table from './components/table';
 import Home from './containers/home';
+import Users from './containers/users'
 import './App.css';
 
 
@@ -19,8 +20,10 @@ function App() {
       <Routes>
         <Route path='/login' element={<Login />} />
         <Route path='/' element={<Home />} />
-        <Route path='/history' element={<History />} />
+        <Route path='/users' element={<Users />} />
+        {/* <Route path='/history' element={<Table />} /> */}
         <Route path='/profile' element={<Profile />} />
+        <Route path='*' element={'No se encontro la pagina'} />
       </Routes>
     </Router>
   );

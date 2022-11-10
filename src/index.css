@@ -28,6 +28,15 @@ code {
     monospace;
 }
 
+.div-button-a{
+  width: 10%;
+}
+
+.title{
+  margin-top: 25px;
+  margin-bottom: 55px;
+}
+
 /* Botones en general */
 .button-primary{
   width: 100%;
