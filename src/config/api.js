@@ -2,7 +2,7 @@ const api = async(url, options = {}) =>{
   options.headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
-    "Authorization": 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNjNkOWRhZmY1ZTA4ZWJmZTY4ODdjNyIsIm5hbWUxIjoiQW5kcmVzIiwiZW1haWwiOiJhbmRyZXNmZWxpcGVAZ21haWwuY29tIiwicm9sIjoiYWRtaW4iLCJpYXQiOjE2NjgwMDQ4MzAsImV4cCI6MTY2ODA5MTIzMH0.pp7wQMCTGLnpo7gbxFQnw99yJ4C0kz4KeTSjwGulmiI'
+    "Authorization": sessionStorage.getItem('token')
   };
 
   try{

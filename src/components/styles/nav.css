@@ -96,9 +96,10 @@
   width: 35%;
 }
 
-#menu #profile a:hover{
+#menu #profile a:hover, #menu #profile button:hover{
   color: rgb(201, 201, 201)
 }
+
 
  /* items del menu */
 
@@ -108,7 +109,7 @@
 
  /* enlaces del menu */
 
-#menu ul a {
+#menu ul a, #menu ul button {
   display:block;
   color:#fff;
   text-decoration:none;
@@ -118,6 +119,7 @@
   font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform:uppercase;
   letter-spacing:1px;
+  cursor: pointer;
 }
 
  /* items del menu */
@@ -150,15 +152,16 @@
 
 #menu ul ul li {
   float:none;
-  width:150px
+  width:100px
 }
 
  /* enlaces de los items del menu desplegable */
 
-#menu ul ul a {
+#menu ul ul a, #menu ul ul button {
   line-height:120%;
   padding:10px 15px;
 }
+
 
  /* items del menu desplegable al pasar el ratón */
 

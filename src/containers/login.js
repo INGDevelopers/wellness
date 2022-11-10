@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import Registro from "../components/Registro";
 import login from "../config/login";
 
+import Portada from '../images/deportes.jpg';
+
 
 function Login() {
 
@@ -20,16 +22,12 @@ function Login() {
             password: password
 
         }).then((res) => {
-
-            console.log(res);
             if (!res.success) {
 
             } else {
                 sessionStorage.setItem('token', res.token);
-
+                navigate('/');
             }
-
-
         });
     }
 
@@ -38,30 +36,32 @@ function Login() {
 
         <div className="principal-login" >
 
-            <div className="img">
-                <img src="../images/deportes.jpg" alt="" />
-            </div>
+            <div className="login">
+                <div className="img">
+                    <img src={Portada} alt="" />
+                </div>
 
-            <div className="login-in">
-                <form onSubmit={submitData}>
-                    <div className="mb-3 ">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Correo institucional</label>
-                        <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
+                <div className="login-in">
+                    <form onSubmit={submitData}>
+                        <div className="mb-3 ">
+                            <label htmlFor="exampleInputEmail1" className="form-label">Correo institucional</label>
+                            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
 
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
-                        <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" required />
-                        <div id="emailHelp" className="form-text"> ¿Has olvidado tu contraseña? </div>
-                    </div>
-                    <div id="btn1"><button type="submit" className="btn btn-primary">Iniciar Sesion</button></div>
+                        </div>
+                        <div className="mb-3">
+                            <label htmlFor="exampleInputPassword1" className="form-label">Contraseña</label>
+                            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" required />
+                            <div id="emailHelp" className="form-text"> ¿Has olvidado tu contraseña? </div>
+                        </div>
+                        <div id="btn1"><button type="submit" className="button-primary">Iniciar Sesion</button></div>
 
-                    <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
-                        <button className="btn-n" onClick={() => cambiarestadoModal1(!estadoModal1)} href="">¿No tienes cuenta?</button>
-                    </div>
-                </form>
-                <Registro show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} />
+                        <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
+                            <button className="btn-n" onClick={() => cambiarestadoModal1(!estadoModal1)} href="">¿No tienes cuenta?</button>
+                        </div>
+                    </form>
+                    <Registro show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} />
 
+                </div>
             </div>
         </div>
     );

@@ -1,12 +1,21 @@
-import {useLocation} from 'react-router-dom';
+import { useNavigate, useLocation} from 'react-router-dom';
 import './styles/nav.css';
 
-import FotoProfile from '../images/profile.jpg';
+import FotoProfile from '../images/notFound.png';
 
 const NavBar = () => {
 
   const pathName = useLocation();
+  const navigate = useNavigate();
+
   // console.log(pathName.pathname)
+
+  const logout = () => {
+    if(sessionStorage.getItem('token')){
+      sessionStorage.removeItem('token');
+      navigate('/login');
+    }
+  }
 
   return(
     <nav id="menu">
@@ -24,8 +33,8 @@ const NavBar = () => {
             
           {/* <!-- start menu desplegable --> */}
           <ul>
-            {/* <li><a href="/profile">Perfil</a></li> */}
-            <li><a href="#">Salir</a></li>
+            <li><a href="/config">Config</a></li>
+            <li><a onClick={logout}>Salir</a></li>
           </ul>
           {/* <!-- end menu desplegable --> */}
         </li>

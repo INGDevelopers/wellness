@@ -9,7 +9,8 @@ import Profile from './containers/profile';
 import Login from './containers/login';
 import Table from './components/table';
 import Home from './containers/home';
-import Users from './containers/users'
+import Users from './containers/users';
+import History from './containers/history';
 import './App.css';
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path='/users' element={<Users />} />
         {/* <Route path='/history' element={<Table />} /> */}
         <Route path='/profile' element={<Profile />} />
+        <Route path='/history' element={<History/>}/>
         <Route path='*' element={'No se encontro la pagina'} />
       </Routes>
     </Router>

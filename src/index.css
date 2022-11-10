@@ -46,6 +46,20 @@ code {
   margin-bottom: 55px;
 }
 
+.alert{
+  width: 100%;
+  height: 80%;
+}
+
+.alert .alert-title{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 20px;
+  background-color: #df4d4d;
+  color: white;
+}
+
 /* Botones en general */
 .button-primary{
   width: 100%;

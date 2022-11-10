@@ -13,6 +13,9 @@ const users = {
   },
   getUsers: () => {
     return api('/users');
+  },
+  getHistoryCreated: () => {
+    return api('/user/history/id');
   }
 }
 

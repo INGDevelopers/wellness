@@ -13,9 +13,6 @@ const Registro = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-
-
-
     const submitData = (e) => {
         e.preventDefault();
 
@@ -24,7 +21,13 @@ const Registro = (props) => {
             email: email,
             password: password
 
-        }).then((res) => { console.log(res) });
+        }).then((res) => { 
+            if(res.success){
+                setName1('');
+                setEmail('');
+                setPassword('');
+            }
+        });
 
     }
 
@@ -62,7 +65,7 @@ const Registro = (props) => {
                             </Col>
 
                         </Row>
-                        <div id="btn1"><button type="submit" className="btn btn-primary">Registrarse</button></div>
+                        <div id="btn1"><button type="submit" className="button-primary">Registrarse</button></div>
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
