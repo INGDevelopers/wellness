@@ -1,60 +1,38 @@
+import { useState, useEffect } from "react";
 import "../components/styles/home.css";
 
 import NavBar from '../components/Navbar';
 import CardI from '../components/card';
+import instruments from "../config/instruments";
 
 
 
 function Home() {
-	const carsd = [
-		{
-			title: "Raqueta",
-			disp: 15,
-      inUse: 2
-		},
-		{
-			title: "Guitarra",
-			disp: 15,
-      inUse: 2
-		},
-		{
-			title: "B. de futbol",
-			disp: 15,
-      inUse: 2
-		},
-		{
-			title: "B. de futbol",
-			disp: 15,
-      inUse: 2
-		},
-		{
-			title: "B. de futbol",
-			disp: 15,
-      inUse: 2
-		}
-	]
 
-	const inUse = [{
-		title: "Guitarra",
-		disp: 15,
-		inUse: 2
-	}];
+	const [data, setData] = useState([]);
+
+	useEffect(() => {
+		instruments.getInstruments().then((res) => {
+			setData(res.res);
+			console.log(res.res)
+		});
+	},[]);
 
 
 	return (
 		<>
 			<NavBar />
-			<div className="div-button-a">
-				<a className="button-primary" href="/history">Historial de Uso</a>
-			</div>
-			<div className="div-home-principal">
-
+			
+			<div className="div-principal">
+				<div className="div-button-a">
+								<a className="button-primary" href="/history">Historial de Uso</a>
+				</div>
 					<h2>Instrumentos</h2>
 					<div className="div-home-items">
 						{
 							// Instrumentos en inventario
-							carsd.map((el, i) => (
-								<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
+							data.map((el, i) => (
+								<CardI key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data}/>
 							))
 						}
 					</div>
@@ -63,9 +41,9 @@ function Home() {
 						<div className="div-home-items">
 							{
 								// Instrumentos en inventario
-								inUse.map((el, i) => (
-									<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
-								))
+								// inUse.map((el, i) => (
+								// 	<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
+								// ))
 							}
 						</div>
 					</div>

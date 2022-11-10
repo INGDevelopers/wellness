@@ -26,41 +26,42 @@ const Profile = () => {
   },[]);
 
   return(
-    <div className="div-principal-profile">
+    <>
       <NavBar/>
-      <div className='div-button-a'>
-        <a href='/' className="button-primary">Atras</a>
-      </div>
-      <div>
-        <idv className="profile-image">
-          <img src={ProfileImg}/>
-        </idv>
-        <div className="profile-info">
-          <h2>{data.name1} {data.name2} {data.lastName1} {data.lastName2}</h2>
-          <button className="button-primary">Editar</button>
-        </div>
-      </div>
-
-      <div className='profile-info-data'>
-        <div>
-          <h4>Correo institucional</h4>
-          <h5>{data.email}</h5>
+      <div className="div-principal">
+        <div className='div-button-a'>
+          <a href='/' className="button-primary">Atras</a>
         </div>
         <div>
-          <h4>N. Horas</h4>
-          <h5>{data.nHours}</h5>
+          <idv className="profile-image">
+            <img src={ProfileImg}/>
+          </idv>
+          <div className="profile-info">
+            <h2>{data.name1} {data.name2} {data.lastName1} {data.lastName2}</h2>
+            <button className="button-primary">Editar</button>
+          </div>
         </div>
-      </div>
 
-			<div className="title">
-				<h2>Historial de usuarios</h2>
-				<h6>
-					Este historial contiene la informacion de todos los estudiantes y su
-					historial de instrumentos
-				</h6>
-			</div>
-      <Table table='history' title={title} field={'data.historyCreated'}/>
-    </div>
+        <div className='profile-info-data'>
+          <div>
+            <h4>Correo institucional</h4>
+            <h5>{data.email}</h5>
+          </div>
+          <div>
+            <h4>N. Horas</h4>
+            <h5>{data.nHours}</h5>
+          </div>
+        </div>
+
+        <div className="title">
+          <h2>Historial de uso</h2>
+          <h6>
+            Este historial contiene los instrumentos usados y sus horas de uso.
+          </h6>
+        </div>
+        <Table table={'histo'} title={title} field={data.historyCreated}/>
+      </div>
+    </>
   );
 
 }

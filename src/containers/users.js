@@ -9,37 +9,30 @@ const Users = () => {
   const [listUsers, setListUsers] = useState([]);
 
   useEffect(() => {
-    const getApi = async() => {
-      try {
-        await users.getUsers().then((res) =>{
-          setListUsers(res.res);
-          console.log(res.res[0])
-        });
-      }catch(e){
-
-      }
-    }
-
-    getApi();
+    users.getUsers().then((res) =>{
+      setListUsers(res.res);
+    });
   },[]);
     
 
   return (
 		<>
       <NavBar/>
-			<div className="div-button-a">
-				<a href="/" className="button-primary">
-					Atras
-				</a>
+			<div className='div-principal'>
+				<div className="div-button-a">
+					<a href="/" className="button-primary">
+						Atras
+					</a>
+				</div>
+				<div className="title">
+					<h2>Historial de usuarios</h2>
+					<h6>
+						Este historial contiene la informacion de todos los estudiantes y su
+						historial de instrumentos
+					</h6>
+				</div>
+				<Table table={'users'} title={title} field={listUsers} />
 			</div>
-			<div className="title">
-				<h2>Historial de usuarios</h2>
-				<h6>
-					Este historial contiene la informacion de todos los estudiantes y su
-					historial de instrumentos
-				</h6>
-			</div>
-			<Table table={'users'} title={title} field={listUsers} />
 		</>
 	);
 }

@@ -71,6 +71,7 @@
   position: sticky;
   list-style:none;
   margin:0;
+  margin-bottom: 20px;
   padding:0;
   z-index: 2;
 }

@@ -1,5 +1,6 @@
 import {useState} from 'react';
-
+import {Buffer} from 'buffer';
+import btoa from 'btoa';
 
 import './styles/card.css';
 
@@ -9,15 +10,18 @@ const CardI = (props) => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const requ = () => {
-    
-  }
+  const encodedData = window.btoa(props.data);
+  // console.log(`data:${props.contentType};base64,${encodedData}`)
+  // console.log(Buffer.from(props.data).toString('base64'));
 
   return (
       <div className="card">
         <div className="imgBx">
           {/* <a href={linkRepo}><img src={linkImg}/></a> */}
+          {/* <img src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"> */}
           <img src={Foto}/>
+          {/* <img src={Foto} /> */}
+
         </div>
         <div className="content">
           <h2>{props.title}</h2>

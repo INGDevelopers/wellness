@@ -21,11 +21,11 @@ function History(props) {
                         {
                             props.table === 'users'?
                                 props.field.map((ele, i) => (
-                                    <tr>
+                                    <tr key={i}>
                                         <td>Vacio</td>
-                                        <td key={i}>{ele.name1}</td>
-                                        <td key={i}>{ele.lastName1}</td>
-                                        <td key={i}>Vacio</td>
+                                        <td>{ele.email}</td>
+                                        <td>{ele.name1}</td>
+                                        <td>{ele.lastName1}</td>
                                         <td>
                                             <button className="button-primary">Ver</button>
                                         </td>
@@ -37,10 +37,10 @@ function History(props) {
                                         <td></td>
                                     </tr>
                                 ))
-                            :props.table === 'history'?
+                            :props.table === 'h'?
                                 props.field.map((ele, i) => (
                                     <tr>
-                                        <td></td>
+                                        <td>{ele.intrument}</td>
                                     </tr>
                                 ))
                             :null
