@@ -17,7 +17,6 @@ const Users = () => {
 
   return (
 		<>
-      <NavBar/>
 			<div className='div-principal'>
 				<div className="div-button-a">
 					<a href="/" className="button-primary">

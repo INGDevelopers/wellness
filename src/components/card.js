@@ -15,12 +15,12 @@ const CardI = (props) => {
   // console.log(Buffer.from(props.data).toString('base64'));
 
   return (
-      <div className="card">
+      <div className="card-style">
         <div className="imgBx">
           {/* <a href={linkRepo}><img src={linkImg}/></a> */}
           {/* <img src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"> */}
           <img src={Foto}/>
-          {/* <img src={Foto} /> */}
+          {/* <img src={`data:image/jpg;base64,${encodedData}`} /> */}
 
         </div>
         <div className="content">

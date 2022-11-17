@@ -1,11 +1,11 @@
 import api from "./api";
-
+import img from "./api_img";
 
 const instruments = {
   postInstrument: (data) => {
-    return api('/instrument',{
+    return img('/instrument',{
       method: 'POST',
-      body: JSON.stringify(data)
+      body: data
     })
   },
   getInstruments: () => {

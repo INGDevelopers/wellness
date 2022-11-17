@@ -1,0 +1,53 @@
+
+
+import './styles/nav.css';
+
+import Foto from '../images/notFound.png'
+
+export default function Nav(){
+
+  return(
+    <>
+      <div id="sidemenu" class="menu-expanded">
+        {/* <!-- Navbar o header --> */}
+        <div id="header">
+          <div id="title"><span>Verq</span></div>
+          <div id="menu-btn">
+            <div class="btn-menu"></div>
+            <div class="btn-menu"></div>
+            <div class="btn-menu"></div>
+          </div>
+        </div>
+        {/* <!-- Profile --> */}
+        <div id="profile">
+          {/* <!-- Para ubicar la imagen del usuario  --> */}
+          <div id="photo"><img src={Foto} alt="perfil"/></div>
+          <a id="name" href="/profile">editar perfil</a>
+          <div id="name"><span>Andres</span>&nbsp;<span>Quintero</span></div>
+          <a id="name" class="" href="/logout">Salir</a>
+        </div>
+        {/* <!-- items --> */}
+        <div id="menu-items">
+          <div class="item" id="dashboard">
+            <a class="link" href="/">
+              {/* <div class="icon"><img src="../../resources/img/icons8-dashboard-layout-material-outlined/icons8-dashboard-layout-48.png"/></div> */}
+              <div class="title">Dashboard</div>
+            </a>
+          </div>
+          <div class="item" id="users">
+            <a class="link" href="/users">
+              {/* <div class="icon"><img src="../../resources/img/icons8-carrete-de-película-material-outlined/icons8-carrete-de-película-48.png"/></div> */}
+              <div class="title">Usuarios</div>
+            </a>
+          </div>
+          <div class="item" id="instruments">
+            <a class="link" href="/instruments">
+              {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
+              <div class="title">Instrumentos</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}

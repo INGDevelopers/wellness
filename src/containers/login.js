@@ -14,6 +14,8 @@ function Login() {
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
 
+    document.title = 'Login | wellness';
+
     const submitData = (e) => {
         e.preventDefault();
 

@@ -1,171 +1,184 @@
+@charset "utf-8";
 
-  /* .Nav-Content{
-    display:flex;
-    align-items: center;
-    justify-content: end;
-     Color 
-    background: var(--fnd);
 
-    color: var(--color);
-     Posicionamiento y fijado 
-    position: sticky;
-     z-index: 1; 
-     Centrado y flote
-    top: 0;
-
-    height: 40px;
-    width: 100%;
-  }
-  
-  .Nav-Content .Nav {
-    list-style: none;
-    overflow: hidden;  Limpiamos errores de float 
-  }
-  
-  .Nav-Content .Nav li {
-    float: left;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-  }
-  
-  .Nav-Content .Nav li a {
-    display: block;  Convertimos los elementos a en elementos bloque para manipular el padding 
-    padding: 20px;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .Nav-Content .Nav ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #eee;
-    padding: 0;
-  }
-
-.Nav-Content .Nav ul li{
-  float: none;
-  width: 150px;
+#sidemenu{
+  background-color: var(--bgcolor);
+  color: white;
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 
-.Nav-Content .Nav ul a{
-  line-height: 120%;
-  padding: 10px 15px;
+#sidemenu a{
+  color: white;
+  text-decoration: none;
 }
 
-.Nav-Content .Nav li:hover > ul {
-  display: block;
-}  */
+/* Header */
+#sidemenu #header{
+  /* No tener espacio adicional */
+  box-sizing: border-box;
+  border-bottom: solid 1px var(--separatorcolor);
+}
 
+#sidemenu #header #title{
+  box-sizing: border-box;
+  /* Evitar que al momento de colapsar el menu, en texto desborde */
+  overflow: hidden; 
+}
 
-/* menu */
+#sidemenu #header #title, #sidemenu #header #menu-btn{
+  vertical-align: middle;
+}
 
-#menu ul {
-  display: flex;
-  justify-content: end;
-  /* margin-right: 15px; */
-  background-color: var(--fnd);
-  width: 100%;
-  height: 45px;
-  position: sticky;
-  list-style:none;
-  margin:0;
-  margin-bottom: 20px;
-  padding:0;
-  z-index: 2;
+#sidemenu #header #menu-btn{
+  display: inline-block;
+}
+
+#sidemenu #header #menu-btn{
+  cursor: pointer;
+  padding: 10px;
+  width: var(--width-collapsed);
+  box-sizing: border-box;
+}
+
+#sidemenu #header #menu-btn:hover{
+ background-color: var(--hovercolor);
+}
+
+#sidemenu #header #menu-btn .btn-menu{
+  background-color: #fff;
+  width: 80%;
+  height: 2px;
+  margin: 5px 0;
 }
 
 /* Profile */
-
-#menu #profile{
-  /* border-bottom: solid 1px var(--fnd); */
-  width: 100px;
-  padding: 0;
+#sidemenu #profile{
+  border-bottom: solid 1px var(--separatorcolor);
+  padding: var(--padding) 0;
   text-align: center;
 }
 
-#menu #profile #photo{
+#sidemenu #profile #photo{
   box-sizing: border-box;
-  padding: 5px;
+  padding: var(--padding);
   margin: 0 auto;
 }
 
-#menu #profile #photo img{
+#sidemenu #profile #photo img{
   border-radius: 50%;
-  width: 35%;
+  width: 40%;
 }
 
-#menu #profile a:hover, #menu #profile button:hover{
+#sidemenu #profile a:hover{
   color: rgb(201, 201, 201)
 }
 
-
- /* items del menu */
-
-#menu ul li {
-  background-color:var(--fnd);
+#sidemenu #profile #photo, #sidemenu #profile #name{
+  font-size: 18px;
+  padding: var(--padding) 0;
+  overflow: hidden;
 }
 
- /* enlaces del menu */
 
-#menu ul a, #menu ul button {
-  display:block;
-  color:#fff;
-  text-decoration:none;
-  font-weight:400;
-  font-size:15px;
-  padding:10px;
-  font-family:"HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  cursor: pointer;
+/* Items */
+
+.item_activo{
+  background-color: var(--hovercolor);
 }
 
- /* items del menu */
-
-#menu ul li {
-  position:relative;
-  float:left;
-  margin:0;
-  padding:0;
+#sidemenu #menu-items{
+  overflow: hidden;
 }
 
- /* efecto al pasar el ratón por los items del menu */
-
-#menu ul li:hover {
-  background:var(--fndS);
+#sidemenu #menu-items .item{
+  width: var(--width);
 }
 
- /* menu desplegable */
+#sidemenu #menu-items .item .icon{
+  display: inline-block;
+}
 
-#menu ul ul {
+#sidemenu #menu-items .item .icon,
+#sidemenu #menu-items .item .title{
+  font-size: 14px;
+  vertical-align: middle;
+  overflow: hidden;
+  display: inline-block
+}
+
+#sidemenu #menu-items .item a{
+  display: block;
+}
+
+#sidemenu #menu-items .item a:hover{
+  background-color: var(--hovercolor);
+  color: var(--separatorcolor);
+}
+
+#sidemenu #menu-items .item .icon{
+  box-sizing: border-box;
+  padding: var(--padding);
+  width: var(--width-collapsed);
+}
+
+#sidemenu #menu-items .item .icon img{
+  width: 100%;
+}
+
+#sidemenu #menu-items .item .title{
+  padding: var(--padding) 0;
+}
+
+#sidemenu #menu-items .item .separator{
+  height: 1px;
+  border-bottom: solid 1px var(--separatorcolor);
+  margin: 15px 0;
+}
+
+.menu-expanded{
+  width: var(--width);
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.5);
+
+}
+
+.menu-expanded #header #title{
+  display: inline-block;
+  width: calc(100% - 50px);
+  margin-right: -7px;
+  padding: var(--padding);
+}
+
+.menu-expanded #header #title span{
+  width: calc(var(--width) - var(--width-collapsed) - 15px);
+  overflow: hidden;
+}
+
+.menu-expanded #profile #photo{
+  width: 200px;
+}
+
+.menu-expanded #profile #name{
+  width: 100%;
+}
+
+.menu-collapsed{
+  width: var(--width-collapsed);
+}
+
+.menu-collapsed #header #title{
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-collapsed #profile #name{
   display: none;
-  position: absolute;
-  top:100%;
-  left:0;
-  background:#eee;
-  padding:0;
 }
 
- /* items del menu desplegable */
-
-#menu ul ul li {
-  float:none;
-  width:100px
+.menu-collapsed .item{
+  width: 100px;
 }
-
- /* enlaces de los items del menu desplegable */
-
-#menu ul ul a, #menu ul ul button {
-  line-height:120%;
-  padding:10px 15px;
-}
-
-
- /* items del menu desplegable al pasar el ratón */
-
-#menu ul li:hover > ul {
-  display:block;
-}
-  

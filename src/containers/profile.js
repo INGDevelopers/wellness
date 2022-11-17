@@ -12,14 +12,13 @@ import users from '../config/users';
 
 
 const Profile = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const title = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
 
   useEffect(() => {
     const getApi = async()=>{
       await users.getUserById().then((res) => {
-        setData(res.res);
-        console.log(res.res);
+        setData(res.res.historyCreated);
       });
     }
     getApi();
@@ -37,7 +36,7 @@ const Profile = () => {
             <img src={ProfileImg}/>
           </idv>
           <div className="profile-info">
-            <h2>{data.name1} {data.name2} {data.lastName1} {data.lastName2}</h2>
+            <h2>{data.name1} {data.name2} {data.lastName1} {data.lastName2}</h2>&nbsp;
             <button className="button-primary">Editar</button>
           </div>
         </div>
@@ -59,7 +58,12 @@ const Profile = () => {
             Este historial contiene los instrumentos usados y sus horas de uso.
           </h6>
         </div>
-        <Table table={'histo'} title={title} field={data.historyCreated}/>
+        {
+          data.length?
+            <Table table={'history'} title={title} field={data}/>
+          :
+          <Table table={'history'} title={title} field={[]}/>
+        }
       </div>
     </>
   );

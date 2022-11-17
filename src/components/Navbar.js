@@ -1,5 +1,5 @@
 import { useNavigate, useLocation} from 'react-router-dom';
-import './styles/nav.css';
+import './styles/navBar.css';
 
 import FotoProfile from '../images/notFound.png';
 
@@ -33,7 +33,7 @@ const NavBar = () => {
             
           {/* <!-- start menu desplegable --> */}
           <ul>
-            <li><a href="/config">Config</a></li>
+            <li><a href="/admin">Config</a></li>
             <li><a onClick={logout}>Salir</a></li>
           </ul>
           {/* <!-- end menu desplegable --> */}

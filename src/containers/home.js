@@ -3,6 +3,7 @@ import "../components/styles/home.css";
 
 import NavBar from '../components/Navbar';
 import CardI from '../components/card';
+import Alert from '../components/alert';
 import instruments from "../config/instruments";
 
 
@@ -14,7 +15,6 @@ function Home() {
 	useEffect(() => {
 		instruments.getInstruments().then((res) => {
 			setData(res.res);
-			console.log(res.res)
 		});
 	},[]);
 
@@ -30,6 +30,7 @@ function Home() {
 
 					<div className="title">
 						<h2>Instrumentos</h2>
+						<h6>Disponibles en almacen</h6>
 					</div>
 					<div className="div-home-items">
 						{
@@ -39,25 +40,20 @@ function Home() {
 									<CardI key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data}/>
 								))
 							: 
-							<div className="alert">
-								<h5 className="alert-title">No se encuentran instrumentos disponibles en la lista</h5>
-								<h6 className="alerta-title">Por favor espere a que el administrador añada los instrumentos.</h6>
-							</div>
+							<Alert/>
 						}
 					</div>
 					<div className="title">
 						<h2>Instrumentos en uso</h2>
 					</div>
-					<div className="div-home-wrapp">
-						<div className="div-home-items">
-							{
-								// Instrumentos en inventario
-								// inUse.map((el, i) => (
-								// 	<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
-								// ))
-							}
-						</div>
-					</div>
+					{/* <div className="div-home-items">
+						{
+							// Instrumentos en inventario
+							inUse.map((el, i) => (
+								<CardI key={i} title={el.title} disp={el.disp} inUse={el.inUse} />
+							))
+						}
+					</div> */}
 			</div>
 		</>
 	);

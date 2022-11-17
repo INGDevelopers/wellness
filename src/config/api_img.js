@@ -1,7 +1,8 @@
-const api = async(url, options = {}) =>{
+
+const img = async(url, options = {}) =>{
   options.headers = {
-    "Content-Type": "application/json",
-    Accept: "application/json",
+    // "Content-Type": "multipart/form-data",
+    // Accept: "application/json",
     "Authorization": sessionStorage.getItem('token')
   };
 
@@ -10,6 +11,7 @@ const api = async(url, options = {}) =>{
     // Codigo correcto
     // if(res.status == 200 || res.status == 201){  
       const jsondata = await res.json();
+      // console.log(jsondata)
       return jsondata;
     // }
 
@@ -18,5 +20,4 @@ const api = async(url, options = {}) =>{
   }
 }
 
-
-export default api;
+export default img;

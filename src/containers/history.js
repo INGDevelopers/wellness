@@ -8,14 +8,13 @@ import Table from "../components/table";
 
 const History = () => {
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const title = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
 
   useEffect(() => {
     const getApi = async()=>{
       await users.getHistoryCreated().then((res) => {
-        setData(res.res);
-        console.log(res.res);
+        setData(res.res.historyCreated);
       });
     }
     getApi();
@@ -35,7 +34,12 @@ const History = () => {
             Este historial contiene los instrumentos usados y sus horas de uso.
           </h6>
         </div>
-        <Table table={'histo'} title={title} field={data}/>
+        {
+          data.length?
+            <Table table={'history'} title={title} field={data}/>
+          :
+          <Table table={'history'} title={title} field={[]}/>
+        }
       </div>
     </>
   );

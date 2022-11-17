@@ -2,6 +2,7 @@ import "./styles/table.css";
 
 
 function History(props) {
+
 	return (
 		<> 
 			<div className="History">
@@ -33,14 +34,24 @@ function History(props) {
                                 ))
                             :props.table === 'requests'?
                                 props.field.map((ele, i) => (
-                                    <tr>
-                                        <td></td>
+                                    <tr key={i}>
+                                        <td>Vacio</td>
+                                        <td>{ele.idUser.email}</td>
+                                        <td>{ele.idUser.name1}</td>
+                                        <td>{ele.idInstrument.name}</td>
+                                        <td>{ele.requ}</td>
+                                        <td>{ele.createdAt}</td>
+                                        <td>{ele.updatedAt}</td>
+                                        <td><button className="button-primary">Ver</button></td>
                                     </tr>
                                 ))
-                            :props.table === 'h'?
+                            :props.table === 'history'?
                                 props.field.map((ele, i) => (
-                                    <tr>
-                                        <td>{ele.intrument}</td>
+                                    <tr key={i}>
+                                        <td>Vacio</td>
+                                        <td>{ele.idInstrument.name}</td>
+                                        <td>{ele.createdAt}</td>
+                                        <td>{ele.updatedAt}</td>
                                     </tr>
                                 ))
                             :null
