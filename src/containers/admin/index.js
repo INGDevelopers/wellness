@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { Tab, Tabs } from "react-bootstrap";
 
 import NavBar from "../../components/Navbar";
-import Instrument from "../instruments";
+import Instruments from "../instruments";
 import Users from "../users";
+import Requests from "../request";
 import Nav from "../../components/Nav";
 
 
@@ -13,6 +14,8 @@ import Nav from "../../components/Nav";
 export default function IndexAd () {
 
   const [key, setKey] = useState('home');
+
+  const location = useLocation();
 
   const changeKey = (e) => {
     e.preventDefault();
@@ -23,9 +26,15 @@ export default function IndexAd () {
     <>
       <NavBar/>
       <Nav/>
-      <div className="div-principal">
-        <Users/>
-      </div>
+      {
+        location.pathname === '/admin/users'?
+          <Users/>
+        : location.pathname === '/admin/instruments'?
+          <Instruments/>
+        : location.pathname === '/admin/requests'?
+          <Requests/>
+        :null
+      }
     </>
   );
 }

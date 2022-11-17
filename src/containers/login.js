@@ -12,6 +12,8 @@ function Login() {
     const [estadoModal1, cambiarestadoModal1] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    
     const navigate = useNavigate();
 
     document.title = 'Login | wellness';
@@ -27,6 +29,8 @@ function Login() {
             if (!res.success) {
 
             } else {
+                const rolJson = JSON.stringify(res.res.rol);
+                sessionStorage.setItem('rol', rolJson);
                 sessionStorage.setItem('token', res.token);
                 navigate('/');
             }

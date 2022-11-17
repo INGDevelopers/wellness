@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Table from '../components/table';
-import NavBar from '../components/Navbar';
 
 import requests from '../config/requests';
 
@@ -17,13 +16,12 @@ const Requests = () => {
 
   return (
 		<>
-      <NavBar/>
-			<div className='div-principal'>
-				<div className="div-button-a">
+			<div className='div-principal-admin'>
+				{/* <div className="div-button-a">
 					<a href="/" className="button-primary">
 						Inicio
 					</a>
-				</div>
+				</div> */}
 				<div className="title">
 					<h2>Historial de solicitudes</h2>
 					<h6>

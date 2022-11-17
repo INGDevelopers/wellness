@@ -28,7 +28,7 @@ function History(props) {
                                         <td>{ele.name1}</td>
                                         <td>{ele.lastName1}</td>
                                         <td>
-                                            <button className="button-primary">Ver</button>
+                                            <button className="button-primary" onClick={props.onClick}>Ver</button>
                                         </td>
                                     </tr>
                                 ))

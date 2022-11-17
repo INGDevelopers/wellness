@@ -18,6 +18,7 @@ const Instrument = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [viewImg, setViewImg] = useState(null);
 
+
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -64,8 +65,7 @@ const Instrument = () => {
 
   return(
     <>
-      <NavBar/>
-      <div className="div-principal">
+      <div className="div-principal-admin">
         <div className="div-form-instrument">
           <form onSubmit={handleSubmit(onSubmit)}>
             <h5 style={{textAlign: "center"}}>Registrar intrumento</h5>

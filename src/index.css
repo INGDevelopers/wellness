@@ -15,18 +15,13 @@
   --width-collapsed: 50px;
 }
 
-.body-expanded{
-  /* Para que el body se ajuste a la barra */
-  /* margin-left: var(--width); */
-  margin-left: var(--width-collapsed);
-}
+
 
 body {
   box-sizing: border-box;
   margin: 0 auto;
   /* max-width: 100%; */
   
-  margin-left: var(--width);
   /* margin-left: var(--width-collapsed); */
   
   /* margin: 25px 50px 50px 50px; */
@@ -41,6 +36,19 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+
+.div-principal-admin{
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 75px; */
+  margin: 0 auto;
+  min-height: 100vh;
+  width: 85%;
+  padding: 25px;
+  margin-left: var(--width);
 }
 
 .div-principal{

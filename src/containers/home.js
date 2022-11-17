@@ -21,7 +21,6 @@ function Home() {
 
 		users.getUserById().then((res)=> {
 			setInUse(res.res.inUse);
-			// console.log(res.res)
 		});
 	},[]);
 

@@ -28,6 +28,10 @@ function App() {
           <Route path='/' element={<Home />} />
           {/* <Route path='/users' element={<Users />} /> */}
           <Route path='/admin' element={<IndexAd />} />
+          <Route path='/admin/users' element={<IndexAd />} />
+          <Route path='/admin/instruments' element={<IndexAd />} />
+          <Route path='/admin/requests' element={<IndexAd />} />
+
           <Route path='/requests' element={<Requests />} />
           {/* <Route path='/admin/users' element={<IndexAd />} />
           <Route path='/admin/instruments' element={<IndexAd />} /> */}

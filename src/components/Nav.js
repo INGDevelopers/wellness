@@ -1,10 +1,19 @@
 
-
+import { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import './styles/nav.css';
 
 import Foto from '../images/notFound.png'
 
 export default function Nav(){
+
+  const [url, setUrl] = useState();
+  const navigate = useNavigate();
+
+  const handleNavigate = (e) => {
+    navigate(e);
+    setUrl(e);
+  }
 
   return(
     <>
@@ -22,9 +31,9 @@ export default function Nav(){
         <div id="profile">
           {/* <!-- Para ubicar la imagen del usuario  --> */}
           <div id="photo"><img src={Foto} alt="perfil"/></div>
-          <a id="name" href="/profile">editar perfil</a>
+          {/* <a id="name" href="/profile">editar perfil</a> */}
           <div id="name"><span>Andres</span>&nbsp;<span>Quintero</span></div>
-          <a id="name" class="" href="/logout">Salir</a>
+          <a id="name" class="" href="/">Inicio</a>
         </div>
         {/* <!-- items --> */}
         <div id="menu-items">
@@ -35,15 +44,21 @@ export default function Nav(){
             </a>
           </div>
           <div class="item" id="users">
-            <a class="link" href="/users">
+            <a class="link" onClick={() => handleNavigate('/admin/users')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-carrete-de-película-material-outlined/icons8-carrete-de-película-48.png"/></div> */}
               <div class="title">Usuarios</div>
             </a>
           </div>
           <div class="item" id="instruments">
-            <a class="link" href="/instruments">
+            <a class="link" onClick={() => handleNavigate('/admin/instruments')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
               <div class="title">Instrumentos</div>
+            </a>
+          </div>
+          <div class="item" id="instruments">
+            <a class="link" onClick={() => handleNavigate('/admin/requests')}>
+              {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
+              <div class="title">Solicitudes</div>
             </a>
           </div>
         </div>
