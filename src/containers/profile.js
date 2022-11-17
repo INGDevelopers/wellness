@@ -12,12 +12,14 @@ import users from '../config/users';
 
 
 const Profile = () => {
+  const [profile, setProfile] = useState({});
   const [data, setData] = useState([]);
   const title = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
 
   useEffect(() => {
     const getApi = async()=>{
       await users.getUserById().then((res) => {
+        setProfile(res.res);
         setData(res.res.historyCreated);
       });
     }
@@ -36,7 +38,7 @@ const Profile = () => {
             <img src={ProfileImg}/>
           </idv>
           <div className="profile-info">
-            <h2>{data.name1} {data.name2} {data.lastName1} {data.lastName2}</h2>&nbsp;
+            <h2>{profile.name1} {profile.name2} {profile.lastName1} {profile.lastName2}</h2>&nbsp;
             <button className="button-primary">Editar</button>
           </div>
         </div>
@@ -44,11 +46,11 @@ const Profile = () => {
         <div className='profile-info-data'>
           <div>
             <h4>Correo institucional</h4>
-            <h5>{data.email}</h5>
+            <h5>{profile.email}</h5>
           </div>
           <div>
             <h4>N. Horas</h4>
-            <h5>{data.nHours}</h5>
+            <h5>{profile.nHours}</h5>
           </div>
         </div>
 

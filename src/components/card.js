@@ -32,9 +32,9 @@ const CardI = (props) => {
           <div className='card-button'>
             {
               isLoading?
-                <button className='button-primary' onClick={''}>Solicitando...</button>
+                <button className='button-primary'>Solicitando...</button>
               : 
-              <button className='button-primary' onClick={''}>Solicitar</button>
+              <button className='button-primary'>Solicitar</button>
             }
           </div>
         </div>
