@@ -1,7 +1,15 @@
+import { json, useNavigate, useParams } from "react-router-dom";
 import "./styles/table.css";
 
 
 function History(props) {
+
+
+    const handleClick = (id) => {
+        // const idJ = JSON.stringify(id);
+        sessionStorage.setItem('idUserSearch', id);
+        props.onClick();
+    }
 
 	return (
 		<> 
@@ -28,7 +36,7 @@ function History(props) {
                                         <td>{ele.name1}</td>
                                         <td>{ele.lastName1}</td>
                                         <td>
-                                            <button className="button-primary" onClick={props.onClick}>Ver</button>
+                                            <button className="button-primary"  onClick={() => handleClick(ele._id)}>Ver</button>
                                         </td>
                                     </tr>
                                 ))

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Table from '../components/table';
 import NavBar from '../components/Navbar';
 
@@ -7,15 +8,28 @@ import users from '../config/users';
 
 const Users = () => {
   const title = ['Perfil', 'Correo', 'Nombre', 'Apellido', 'Historial'];
+	const titleHistory = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
+
   const [listUsers, setListUsers] = useState([]);
+	const [history, setHistory] = useState([]);
 
 	const [show, setShow] = useState(false);
+
+	const idUserSearch = sessionStorage.getItem('idUserSearch');
 
   useEffect(() => {
     users.getUsers().then((res) =>{
       setListUsers(res.res);
     });
-  },[]);
+
+		if(idUserSearch){
+			users.getHistoryCreated(idUserSearch).then((res) =>{
+				// console.log(res);
+				setHistory(res.res.historyCreated);
+			});
+		}
+		
+  },[idUserSearch]);
     
 
   return (
@@ -36,7 +50,9 @@ const Users = () => {
 				<Table table={'users'} title={title} field={listUsers} onClick={() => setShow(true)}/>
 			</div>
 			
-      <ModalM show={show} onHide={() => setShow(false)} element={<Table table={'users'} title={title} field={listUsers} />}/>
+      <ModalM show={show} onHide={() => setShow(false)} element={
+				<Table table={'history'} title={titleHistory} field={history} />
+			}/>
 		</>
 	);
 }
