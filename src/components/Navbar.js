@@ -9,6 +9,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   // console.log(pathName.pathname)
+  const rol = sessionStorage.getItem('rol');
 
   const logout = () => {
     if(sessionStorage.getItem('token')){
@@ -33,7 +34,11 @@ const NavBar = () => {
             
           {/* <!-- start menu desplegable --> */}
           <ul>
-            <li><a href="/admin">Config</a></li>
+            {
+              rol === 'admin'?
+                <li><a href="/admin">Config</a></li>
+              :null
+            }
             <li><a onClick={logout}>Salir</a></li>
           </ul>
           {/* <!-- end menu desplegable --> */}

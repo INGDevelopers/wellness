@@ -15,7 +15,15 @@ const users = {
     return api('/users');
   },
   getHistoryCreated: (id) => {
+    return api(`/user/history/id`);
+  },
+  getHistoryCreatedId: (id) => {
     return api(`/user/history/${id}`);
+  },
+  deleteInUseUser: (id) => {
+    return api(`/deleteinuse/${id}`,{
+      method: 'PUT'
+    });
   }
 }
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Registro from "../components/Registro";
 import login from "../config/login";
 
-import Portada from '../images/deportes.jpg';
+import Portada from '../images/portada.jpg';
 
 
 function Login() {
@@ -26,11 +26,9 @@ function Login() {
             password: password
 
         }).then((res) => {
-            if (!res.success) {
-
-            } else {
-                const rolJson = JSON.stringify(res.res.rol);
-                sessionStorage.setItem('rol', rolJson);
+            if (res.success){
+                // const rolJson = JSON.stringify(res.res.rol);
+                sessionStorage.setItem('rol', res.res.rol);
                 sessionStorage.setItem('token', res.token);
                 navigate('/');
             }

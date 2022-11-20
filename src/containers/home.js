@@ -6,6 +6,7 @@ import CardI from '../components/card';
 import Alert from '../components/alert';
 import instruments from "../config/instruments";
 import users from "../config/users";
+import requests from "../config/requests";
 
 
 
@@ -13,18 +14,37 @@ function Home() {
 
 	const [data, setData] = useState([]);
 	const [inUse, setInUse] = useState([]);
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		instruments.getInstruments().then((res) => {
 			setData(res.res);
+			console.log(res.res)
 		});
 
 		users.getUserById().then((res)=> {
 			setInUse(res.res.inUse);
 		});
-	},[]);
+	},[isLoading]);
 
+	const deleteInUseUser = (id) => {
+		setIsLoading(true);
+		users.deleteInUseUser(id).then((res) => {
+      setInUse(res.res.inUse);
+			setIsLoading(false);
+    });
+	}
 
+	const requestInstrument = (id) => {
+		setIsLoading(true);
+		requests.create(id).then((res) => {
+			if(res.success)
+				console.log('Elemento Solicitado')
+				setIsLoading(false);
+		})
+	}
+
+	// const buttonC = 
 	return (
 		<>
 			<NavBar />
@@ -43,7 +63,9 @@ function Home() {
 							data.length?
 								// Instrumentos en inventario
 								data.map((el, i) => (
-									<CardI key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data}/>
+									<CardI key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data} 
+										buttonR={<button  className="button-primary" onClick={() => requestInstrument(el._id)}>Solicitar</button>}
+									/>
 								))
 							: 
 							<Alert/>
@@ -56,7 +78,9 @@ function Home() {
 						{
 							// Instrumentos en inventario
 							inUse.map((el, i) => (
-								<CardI key={i} title={el.idInstrument.name} disp={el.disp} inUse={el.inUse} />
+								<CardI key={i} title={el.idInstrument.name} disp={el.disp} inUse={el.inUse} 
+									buttonC={inUse.length?<button className="button-primary" style={{ backgroundColor: "red", borderColor: "red" }} onClick={() => deleteInUseUser(el.idInstrument._id)}>Devolver</button>:null}
+								/>
 							))
 						}
 					</div>

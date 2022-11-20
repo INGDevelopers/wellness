@@ -17,6 +17,8 @@ const ModalM = (props) => {
         >
             <Modal.Body className="modald ">
               {props.element}
+              {props.elementA}
+              {props.elementD}
             </Modal.Body>
         </Modal>
     </>

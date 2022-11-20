@@ -12,12 +12,10 @@ const History = () => {
   const title = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
 
   useEffect(() => {
-    const getApi = async()=>{
-      await users.getHistoryCreated().then((res) => {
-        setData(res.res.historyCreated);
-      });
-    }
-    getApi();
+    users.getHistoryCreated().then((res) => {
+      setData(res.res.historyCreated);
+      console.log()
+    });
   },[]);
 
   return(

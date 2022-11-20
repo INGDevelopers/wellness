@@ -11,6 +11,11 @@ function History(props) {
         props.onClick();
     }
 
+    const request = (id) =>{
+        sessionStorage.setItem('idRequest', id);
+        props.onClick();
+    }
+
 	return (
 		<> 
 			<div className="History">
@@ -50,7 +55,7 @@ function History(props) {
                                             <td>{ele.requ}</td>
                                             <td>{ele.createdAt}</td>
                                             <td>{ele.updatedAt}</td>
-                                            <td><button className="button-primary" onClick={props.onClick}>Ver</button></td>
+                                            <td><button className="button-primary" onClick={() => request(ele._id)}>Ver</button></td>
                                         </tr>
                                     ))
                                     : props.table === 'history' ?

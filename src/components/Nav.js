@@ -32,13 +32,13 @@ export default function Nav(){
           {/* <!-- Para ubicar la imagen del usuario  --> */}
           <div id="photo"><img src={Foto} alt="perfil"/></div>
           {/* <a id="name" href="/profile">editar perfil</a> */}
-          <div id="name"><span>Andres</span>&nbsp;<span>Quintero</span></div>
+          {/* <div id="name"><span>Andres</span>&nbsp;<span>Quintero</span></div> */}
           <a id="name" class="" href="/">Inicio</a>
         </div>
         {/* <!-- items --> */}
         <div id="menu-items">
           <div class="item" id="dashboard">
-            <a class="link" href="/">
+            <a class="link" href="/admin">
               {/* <div class="icon"><img src="../../resources/img/icons8-dashboard-layout-material-outlined/icons8-dashboard-layout-48.png"/></div> */}
               <div class="title">Dashboard</div>
             </a>

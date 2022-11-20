@@ -30,13 +30,20 @@ const CardI = (props) => {
             En uso {props.inUse}
           </p>
           <div className='card-button'>
-            {
+            {props.buttonR}
+            {props.buttonC}
+            {/* {
               isLoading?
                 <button className='button-primary'>Solicitando...</button>
               : 
               <button className='button-primary'>Solicitar</button>
-            }
+            } */}
           </div>
+          {/* <div className='card-button'>
+            {
+              <button className='button-primary'>cancelar...</button>
+            }
+          </div> */}
         </div>
       </div>
   );
