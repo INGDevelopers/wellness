@@ -44,7 +44,7 @@ function Home() {
 		})
 	}
 
-	// const buttonC = 
+	
 	return (
 		<>
 			<NavBar />
