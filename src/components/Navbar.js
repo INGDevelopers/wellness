@@ -1,43 +1,74 @@
-import { useNavigate, useLocation} from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './styles/navBar.css';
-
+import ToggleBar from './ToggleBar';
 import FotoProfile from '../images/notFound.png';
+import { useState } from 'react';
 
 const NavBar = () => {
 
   const pathName = useLocation();
   const navigate = useNavigate();
+  const [Toggle, setToggle] = useState(false);
 
   // console.log(pathName.pathname)
   const rol = sessionStorage.getItem('rol');
 
   const logout = () => {
-    if(sessionStorage.getItem('token')){
+    if (sessionStorage.getItem('token')) {
       sessionStorage.removeItem('token');
       navigate('/login');
     }
   }
 
-  return(
+  return (
     <nav id="menu">
+
       {/* <!-- start menu --> */}
+
       <ul>
-        <li>
+        <li id="Navmvl">
+          <ToggleBar onClick={() => setToggle(!Toggle)} />
+          <ul show={Toggle}>
+            {console.log(Toggle)}
+            <li>
+              {
+                pathName.pathname !== '/profile' ?
+                  <a href="profile" id="profile">
+                    {/* Para ubicar la imagen del usuarios */}
+                    <div id="photo"><img src={FotoProfile} alt="perfil" /></div>
+
+                  </a>
+                  : <a>Menu</a>
+
+              }
+            </li>
+            {
+              rol === 'admin' ?
+                <li><a href="/admin">Config</a></li>
+                : null
+            }
+            <li><a onClick={logout}>Salir</a></li>
+          </ul>
+
+        </li>
+
+        <li id="Navpc">
           {
-            pathName.pathname !== '/profile'?
+            pathName.pathname !== '/profile' ?
               <a href="profile" id="profile">
                 {/* Para ubicar la imagen del usuarios */}
-                  <div id="photo"><img src={FotoProfile} alt="perfil"/></div>
+                <div id="photo"><img src={FotoProfile} alt="perfil" /></div>
+
               </a>
-            :<a>Menu</a>
+              : <a>Menu</a>
           }
-            
+
           {/* <!-- start menu desplegable --> */}
           <ul>
             {
-              rol === 'admin'?
+              rol === 'admin' ?
                 <li><a href="/admin">Config</a></li>
-              :null
+                : null
             }
             <li><a onClick={logout}>Salir</a></li>
           </ul>
@@ -46,7 +77,7 @@ const NavBar = () => {
       </ul>
       {/* <!-- end menu --> */}
     </nav>
-      // <!-- end nav -->
+    // <!-- end nav -->
   );
 }
 
