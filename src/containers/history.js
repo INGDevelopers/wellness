@@ -1,8 +1,9 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import users from "../config/users";
 
 import NavBar from '../components/Navbar';
 import Table from "../components/table";
+import Backgroung from "../components/Backgroung";
 
 
 
@@ -16,13 +17,14 @@ const History = () => {
       setData(res.res.historyCreated);
       console.log()
     });
-  },[]);
+  }, []);
 
-  return(
+  return (
     <>
-      <NavBar/>
+      <NavBar />
+      <Backgroung />
       <div className="div-principal">
-        
+
         <div className='div-button-a'>
           <a href='/' className="button-primary">Atras</a>
         </div>
@@ -33,10 +35,10 @@ const History = () => {
           </h6>
         </div>
         {
-          data.length?
-            <Table table={'history'} title={title} field={data}/>
-          :
-          <Table table={'history'} title={title} field={[]}/>
+          data.length ?
+            <Table table={'history'} title={title} field={data} />
+            :
+            <Table table={'history'} title={title} field={[]} />
         }
       </div>
     </>

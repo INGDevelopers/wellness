@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 import '../components/styles/profile.css';
 
@@ -6,7 +6,7 @@ import NavBar from '../components/Navbar';
 import Table from '../components/table';
 
 import ProfileImg from '../images/notFound.png';
-
+import Backgroung from "../components/Backgroung";
 
 import users from '../config/users';
 
@@ -17,25 +17,26 @@ const Profile = () => {
   const title = ['Intrumento', 'Nombre', 'Hora de inicio', 'Hora final'];
 
   useEffect(() => {
-    const getApi = async()=>{
+    const getApi = async () => {
       await users.getUserById().then((res) => {
         setProfile(res.res);
         setData(res.res.historyCreated);
       });
     }
     getApi();
-  },[]);
+  }, []);
 
-  return(
+  return (
     <>
-      <NavBar/>
+      <NavBar />
+      <Backgroung />
       <div className="div-principal">
         <div className='div-button-a'>
           <a href='/' className="button-primary">Atras</a>
         </div>
         <div>
           <idv className="profile-image">
-            <img src={ProfileImg}/>
+            <img src={ProfileImg} />
           </idv>
           <div className="profile-info">
             <h2>{profile.name1} {profile.name2} {profile.lastName1} {profile.lastName2}</h2>&nbsp;
@@ -61,10 +62,10 @@ const Profile = () => {
           </h6>
         </div>
         {
-          data.length?
-            <Table table={'history'} title={title} field={data}/>
-          :
-          <Table table={'history'} title={title} field={[]}/>
+          data.length ?
+            <Table table={'history'} title={title} field={data} />
+            :
+            <Table table={'history'} title={title} field={[]} />
         }
       </div>
     </>
