@@ -1,11 +1,17 @@
 
 import { useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './styles/nav.css';
+import Iusers from '../icons/users.png';
+import Istatics from '../icons/statistics.png';
+import Iins from '../icons/instruments.png';
+import Ireq from '../icons/requests.png';
+
+
 
 import Foto from '../images/notFound.png'
 
-export default function Nav(){
+export default function Nav() {
 
   const [url, setUrl] = useState();
   const navigate = useNavigate();
@@ -15,7 +21,7 @@ export default function Nav(){
     setUrl(e);
   }
 
-  return(
+  return (
     <>
       <div id="sidemenu" class="menu-expanded">
         {/* <!-- Navbar o header --> */}
@@ -30,7 +36,7 @@ export default function Nav(){
         {/* <!-- Profile --> */}
         <div id="profile">
           {/* <!-- Para ubicar la imagen del usuario  --> */}
-          <div id="photo"><img src={Foto} alt="perfil"/></div>
+          <div id="photo"><img src={Foto} alt="perfil" /></div>
           {/* <a id="name" href="/profile">editar perfil</a> */}
           {/* <div id="name"><span>Andres</span>&nbsp;<span>Quintero</span></div> */}
           <a id="name" class="" href="/">Inicio</a>
@@ -40,25 +46,25 @@ export default function Nav(){
           <div class="item" id="dashboard">
             <a class="link" href="/admin">
               {/* <div class="icon"><img src="../../resources/img/icons8-dashboard-layout-material-outlined/icons8-dashboard-layout-48.png"/></div> */}
-              <div class="title">Dashboard</div>
+              <div class="title">Dashboard <img src={Istatics} alt="img de usuarios" /></div>
             </a>
           </div>
           <div class="item" id="users">
             <a class="link" onClick={() => handleNavigate('/admin/users')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-carrete-de-película-material-outlined/icons8-carrete-de-película-48.png"/></div> */}
-              <div class="title">Usuarios</div>
+              <div class="title">Usuarios <img src={Iusers} alt="img de usuarios" /></div>
             </a>
           </div>
           <div class="item" id="instruments">
             <a class="link" onClick={() => handleNavigate('/admin/instruments')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
-              <div class="title">Instrumentos</div>
+              <div class="title">Instrumentos <img src={Iins} alt="img de usuarios" /></div>
             </a>
           </div>
           <div class="item" id="instruments">
             <a class="link" onClick={() => handleNavigate('/admin/requests')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
-              <div class="title">Solicitudes</div>
+              <div class="title">Solicitudes <img src={Ireq} alt="img de usuarios" /></div>
             </a>
           </div>
         </div>
