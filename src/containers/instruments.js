@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {useForm} from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import NavBar from "../components/Navbar";
 import CardI from "../components/card";
 
@@ -11,7 +11,7 @@ import '../components/styles/instrument.css';
 
 const Instrument = () => {
 
-  const {register, handleSubmit} = useForm();
+  const { register, handleSubmit } = useForm();
 
   const [name, setName] = useState('Nombre');
   const [amount, setAmount] = useState(0);
@@ -28,12 +28,12 @@ const Instrument = () => {
       setData(res.res);
     })
 
-  },[isLoading]);
+  }, [isLoading]);
 
 
   const onSubmit = (data) => {
     // console.log(selectedFile);
-    if(name !== String('Nombre') || amount !== Number(0) || selectedFile !== null){
+    if (name !== String('Nombre') || amount !== Number(0) || selectedFile !== null) {
       setIsLoading(true);
       const formData = new FormData();
       formData.append('name', data.name);
@@ -42,46 +42,46 @@ const Instrument = () => {
       // setViewImg(data.image[0].name);
 
       instruments.postInstrument(formData).then((res) => {
-        if(res.success)
+        if (res.success)
           setIsLoading(false);
 
-          //Limpiamos
-          setName('');
-          setAmount(0);
-          setSelectedFile(null);
+        //Limpiamos
+        setName('');
+        setAmount(0);
+        setSelectedFile(null);
 
       })
     }
     // console.log(data.image)
-    
+
   }
 
-  const reset = () =>{
+  const reset = () => {
     setName('');
     setAmount(0);
     setSelectedFile(null);
   }
 
 
-  return(
+  return (
     <>
       <div className="div-principal-admin">
         <div className="div-form-instrument">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h5 style={{textAlign: "center"}}>Registrar intrumento</h5>
+            <h5 style={{ textAlign: "center" }}>Registrar intrumento</h5>
             <div>
               <h6>Nombre</h6>
-              <input type='text' {...register("name")} value={name === 'Nombre'?'':name} onChange={(e) => setName(e.target.value) }/>
+              <input type='text' {...register("name")} value={name === 'Nombre' ? '' : name} onChange={(e) => setName(e.target.value)} />
             </div>
-              
+
             <div>
               <h6>disponible</h6>
-              <input type='number' {...register("amount")} value={amount} onChange={(e) => setAmount(e.target.value)}/>
+              <input type='number' {...register("amount")} value={amount} onChange={(e) => setAmount(e.target.value)} />
             </div>
 
             <div>
               <h6>Imagen</h6>
-              <input type='file' {...register("image")} value={selectedFile} onChange={(e) => setSelectedFile(e.target.value)}/>
+              <input type='file' {...register("image")} value={selectedFile} onChange={(e) => setSelectedFile(e.target.value)} />
             </div>
             <div style={{
               display: "flex",
@@ -93,20 +93,20 @@ const Instrument = () => {
             </div>
           </form>
 
-          <CardI title={name} disp={amount} data={viewImg}/>
+          <CardI title={name} disp={amount} data={viewImg} />
         </div>
 
         <div className="title">
-					<h2>Instrumentos</h2>
-				</div>
+          <h2>Instrumentos</h2>
+        </div>
         <div className="div-home-items">
           {
-            data.length?
+            data.length ?
               data.map((el, i) => (
-                <CardI  key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data}/>
+                <CardI key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data} />
               ))
-            :
-            <Alert/>
+              :
+              <Alert />
           }
         </div>
 
