@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import Registro from "../components/Registro";
 import login from "../config/login";
-
+import ModalM from "../components/modalM";
 import Portada from '../images/portada.jpg';
 
 
@@ -13,7 +13,7 @@ function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    
+
     const navigate = useNavigate();
 
     document.title = 'Login | wellness';
@@ -26,7 +26,7 @@ function Login() {
             password: password
 
         }).then((res) => {
-            if (res.success){
+            if (res.success) {
                 // const rolJson = JSON.stringify(res.res.rol);
                 sessionStorage.setItem('rol', res.res.rol);
                 sessionStorage.setItem('token', res.token);
@@ -60,14 +60,18 @@ function Login() {
                         <div id="btn1"><button type="submit" className="button-primary">Iniciar Sesion</button></div>
 
                         <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
-                            <button className="btn-n" onClick={() => cambiarestadoModal1(!estadoModal1)} href="">¿No tienes cuenta?</button>
                         </div>
                     </form>
-                    <Registro show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} />
+                    <div className="btnr">
+                        <button className="btn-n" onClick={() => cambiarestadoModal1(!estadoModal1)} href="">¿No tienes cuenta?</button>
+                    </div>
 
                 </div>
             </div>
-        </div>
+
+            <ModalM className="modal-div" show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} element={<Registro />} />
+
+        </div >
     );
 
 }

@@ -45,6 +45,13 @@
     width: 100%;
     height: 100%;
 }
+.principal-login .login .login-in .btnr{
+
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 #btn1 {
     margin-top: 40px;
