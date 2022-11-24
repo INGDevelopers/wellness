@@ -133,14 +133,20 @@
 }
 #menu #Navmvl {
   width: 100%;
-  text-align: end;
-  padding-right: 10px;
+  text-align: start;
+  padding-left: 10px;
   display: block;
+  
 }
 
 #menu #Navmvl li{
+  z-index: 5;
+  top: 0;
   width: 100%;
+  height: 25%;
+  border-bottom: 1px solid var(--color);
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -152,7 +158,7 @@
 
 #menu #profile{
   /* border-bottom: solid 1px var(--fnd); */
-  width: 150px;
+  width: 180px;
   height: 95px;
   padding: 0;
   text-align: center;
@@ -215,19 +221,25 @@
 
 #menu ul ul {
   display: none;
-  position: absolute;
-  top:100%;
-  width: 100%;
+  position: fixed;
+  top:0;
+  width: 60%;
+  height: 100vh;
   left:0;
-  background:#eee;
+  background: var(--fnd);
   padding:0;
+  z-index: 5;
 }
-
  /* items del menu desplegable */
 
 #menu ul ul li {
   float:none;
-  width:100px
+  width:100px;
+  
+}
+
+#config, #salir{
+  height: 70px !important;
 }
 
  /* enlaces de los items del menu desplegable */

@@ -2,13 +2,13 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import './styles/navBar.css';
 import ToggleBar from './ToggleBar';
 import FotoProfile from '../images/notFound.png';
-import { useState } from 'react';
+
 
 const NavBar = () => {
 
   const pathName = useLocation();
   const navigate = useNavigate();
-  const [Toggle, setToggle] = useState(false);
+
 
   // console.log(pathName.pathname)
   const rol = sessionStorage.getItem('rol');
@@ -26,7 +26,7 @@ const NavBar = () => {
 
       {/* <!-- start menu --> */}
 
-      <ul>
+      <ul id='opciones'>
         <li id="Navmvl">
           <ToggleBar onClick={() => setToggle(!Toggle)} />
           <ul show={Toggle}>
@@ -45,10 +45,10 @@ const NavBar = () => {
             </li>
             {
               rol === 'admin' ?
-                <li><a href="/admin">Config</a></li>
+                <li id='config'><a href="/admin">Config</a></li>
                 : null
             }
-            <li><a onClick={logout}>Salir</a></li>
+            <li id='salir'><a onClick={logout}>Salir</a></li>
           </ul>
 
         </li>
