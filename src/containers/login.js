@@ -57,12 +57,14 @@ function Login() {
                             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" required />
                             <div id="emailHelp" className="form-text"> ¿Has olvidado tu contraseña? </div>
                         </div>
-                        <div id="btn1"><button type="submit" className="button-primary">Iniciar Sesion</button></div>
-
-                        <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
-                            <button className="btn-n" onClick={() => cambiarestadoModal1(!estadoModal1)} href="">¿No tienes cuenta?</button>
+                        <div id="btn1">
+                            <button type="submit" className="button-primary">Iniciar Sesion</button>
                         </div>
                     </form>
+                    
+                    <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
+                        <button type="" className="btn-n" onClick={() => cambiarestadoModal1(!estadoModal1)}>¿No tienes cuenta?</button>
+                    </div>
                     <Registro show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} />
 
                 </div>

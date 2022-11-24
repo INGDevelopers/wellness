@@ -26,6 +26,7 @@ const Registro = (props) => {
                 setName1('');
                 setEmail('');
                 setPassword('');
+                // console.log(res)
             }
         });
 
@@ -68,9 +69,6 @@ const Registro = (props) => {
                         <div id="btn1"><button type="submit" className="button-primary">Registrarse</button></div>
                     </Form>
                 </Modal.Body>
-                <Modal.Footer>
-
-                </Modal.Footer>
             </Modal>
 
         </>

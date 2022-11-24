@@ -19,7 +19,7 @@ function Home() {
 	useEffect(() => {
 		instruments.getInstruments().then((res) => {
 			setData(res.res);
-			console.log(res.res)
+			// console.log(res.res)
 		});
 
 		users.getUserById().then((res)=> {
@@ -39,7 +39,7 @@ function Home() {
 		setIsLoading(true);
 		requests.create(id).then((res) => {
 			if(res.success)
-				console.log('Elemento Solicitado')
+				// console.log('Elemento Solicitado')
 				setIsLoading(false);
 		})
 	}

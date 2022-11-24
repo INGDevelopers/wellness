@@ -25,7 +25,7 @@ const Requests = () => {
 		setIsLoading(true)
 
 		requests.updateRequest(id, {requ: data}).then((res) => {
-			if(res.success || !res.success)
+			if(res.success)
 				setIsLoading(false);
 		})
 	}

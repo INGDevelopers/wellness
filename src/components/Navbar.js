@@ -16,6 +16,7 @@ const NavBar = () => {
   const logout = () => {
     if (sessionStorage.getItem('token')) {
       sessionStorage.removeItem('token');
+      sessionStorage.removeItem('rol');
       navigate('/login');
     }
   }
@@ -29,7 +30,7 @@ const NavBar = () => {
         <li id="Navmvl">
           <ToggleBar onClick={() => setToggle(!Toggle)} />
           <ul show={Toggle}>
-            {console.log(Toggle)}
+            {/* {console.log(Toggle)} */}
             <li>
               {
                 pathName.pathname !== '/profile' ?

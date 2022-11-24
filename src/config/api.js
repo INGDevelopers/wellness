@@ -10,7 +10,7 @@ const api = async(url, options = {}) =>{
     // Codigo correcto
     // if(res.status == 200 || res.status == 201){  
       const jsondata = await res.json();
-      console.log(jsondata)
+      // console.log(jsondata)
       return jsondata;
     // }
 
