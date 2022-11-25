@@ -24,7 +24,7 @@ const Users = () => {
 
 		if(idUserSearch){
 			users.getHistoryCreatedId(idUserSearch).then((res) =>{
-				console.log(res);
+				
 				setHistory(res.res.historyCreated);
 			});
 		}

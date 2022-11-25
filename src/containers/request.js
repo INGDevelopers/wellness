@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Table from '../components/table';
 import requests from '../config/requests';
-import Request from '../components/Request';
+
 import ModalM from '../components/modalM';
+import Loader from '../components/loader';
 
 const Requests = () => {
 	const title = ['Perfil', 'Correo', 'Nombre', 'Instrumento', 'Solicitud', 'Creacion', 'Modificacion', 'Autorizacion'];
@@ -12,20 +13,20 @@ const Requests = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	
 	const id = sessionStorage.getItem('idRequest');
-	console.log(id)
+	
 
 	useEffect(() => {
 		requests.getRequests().then((res) => {
 			setListRequests(res.res);
-			console.log(res.res)
+			
 		});
 	}, [isLoading, id]);
 
 	const request = (id, data) => {
-		setIsLoading(true)
+		setIsLoading(true);
 
 		requests.updateRequest(id, {requ: data}).then((res) => {
-			if(res.success || !res.success)
+			if(res.success)
 				setIsLoading(false);
 		})
 	}
@@ -38,6 +39,9 @@ const Requests = () => {
 						Inicio
 					</a>
 				</div> */}
+				{
+					isLoading && <Loader/>
+				}
 				<div className="title">
 					<h2>Historial de solicitudes</h2>
 					<h6>
@@ -49,7 +53,7 @@ const Requests = () => {
 
 			</div>
 
-			<ModalM show={show} onHide={() => setShow(false)} 
+			<ModalM show={show} onHide={() => setShow(false)} size="sm" 
 				elementA={<button  className="button-primary" onClick={() => request(id,'accepted')}>Aceptar</button>} 
 				elementD={<button style={{ backgroundColor: "red", borderColor: "red" }} className="button-primary" onClick={() => request(id,'denied')}>Denegar</button>}/>
 		</>

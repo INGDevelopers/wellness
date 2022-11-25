@@ -8,7 +8,7 @@ const ModalM = (props) => {
       <Modal
         show={props.show}
         onHide={props.onHide}
-        size={props.size}
+        size={props.size?props.size:"xl"}
 
 
         className="modal"

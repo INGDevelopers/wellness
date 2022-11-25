@@ -26,6 +26,7 @@ const Registro = (props) => {
                 setName1('');
                 setEmail('');
                 setPassword('');
+                // console.log(res)
             }
         });
 

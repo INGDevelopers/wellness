@@ -16,6 +16,7 @@ const NavBar = () => {
   const logout = () => {
     if (sessionStorage.getItem('token')) {
       sessionStorage.removeItem('token');
+      sessionStorage.removeItem('rol');
       navigate('/login');
     }
   }
