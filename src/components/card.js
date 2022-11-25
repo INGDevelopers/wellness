@@ -20,18 +20,19 @@ const CardI = (props) => {
           {/* <a href={linkRepo}><img src={linkImg}/></a> */}
           {/* <img src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"> */}
           <img src={Foto}/>
-          {/* <img src={`data:image/jpg;base64,${encodedData}`} /> */}
+          {/* <img src={`data:image/jpg;charset=utf-8;base64,${encodedData}`} /> */}
 
         </div>
         <div className="content">
           <h2>{props.title}</h2>
           <p>
-            Disponible {props.disp} <br/>
-            En uso {props.inUse}
+            Codigo {props.cod} <br/>
+            En uso: {props.inUse?'Si':'No'}
           </p>
           <div className='card-button'>
             {props.buttonR}
             {props.buttonC}
+            {props.elementB}
             {/* {
               isLoading?
                 <button className='button-primary'>Solicitando...</button>

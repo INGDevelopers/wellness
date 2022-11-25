@@ -9,18 +9,19 @@ import users from "../config/users";
 import requests from "../config/requests";
 import Backgroung from "../components/Backgroung";
 
-
+// Loader
+import Loader from '../components/loader';
 
 function Home() {
 
 	const [data, setData] = useState([]);
 	const [inUse, setInUse] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
+	const [req, setReq] = useState(false);
 
 	useEffect(() => {
 		instruments.getInstruments().then((res) => {
 			setData(res.res);
-			// console.log(res.res)
 		});
 
 		users.getUserById().then((res) => {
@@ -31,7 +32,8 @@ function Home() {
 	const deleteInUseUser = (id) => {
 		setIsLoading(true);
 		users.deleteInUseUser(id).then((res) => {
-			setInUse(res.res.inUse);
+			
+			setInUse([]);
 			setIsLoading(false);
 		});
 	}
@@ -39,16 +41,18 @@ function Home() {
 	const requestInstrument = (id) => {
 		setIsLoading(true);
 		requests.create(id).then((res) => {
-<<<<<<< HEAD
 			if(res.success)
 				// console.log('Elemento Solicitado')
+				// setReq(true);
 				setIsLoading(false);
-=======
-			if (res.success)
-				console.log('Elemento Solicitado')
-			setIsLoading(false);
->>>>>>> a61d051fa1d219664c084eabdc8f907a8bb1f3ef
 		})
+	}
+
+	const refresh = () => {
+		setIsLoading(true);
+		setInterval(() => {
+			setIsLoading(false);
+		}, 3000);
 	}
 
 
@@ -56,10 +60,14 @@ function Home() {
 		<>
 			<NavBar />
 			<Backgroung />
+			{
+				isLoading && (<Loader />)
+			}
 
 			<div className="div-principal">
-				<div className="div-button-a">
+				<div className="div-button-a" style={{display: 'flex', flexDirection: 'row', width:'250px', justifyContent:'space-between', alignItems:'flex-start'}}>
 					<a className="button-primary" href="/history">Historial de Uso</a>
+					<button className="button-primary" onClick={() => refresh()}>Refrescar</button>
 				</div>
 
 				<div className="title">
@@ -71,8 +79,8 @@ function Home() {
 						data.length ?
 							// Instrumentos en inventario
 							data.map((el, i) => (
-								<CardI key={i} title={el.name} disp={el.amount} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data}
-									buttonR={<button className="button-primary" onClick={() => requestInstrument(el._id)}>Solicitar</button>}
+								<CardI key={i} title={el.name} cod={el.cod} inUse={el.inUse} contentType={el.img.contentType} data={el.img.data}
+									buttonR={!el.inUse?<button className="button-primary" onClick={() => requestInstrument(el._id)}>Solicitar</button>:null}
 								/>
 							))
 							:
@@ -86,7 +94,7 @@ function Home() {
 					{
 						// Instrumentos en inventario
 						inUse.map((el, i) => (
-							<CardI key={i} title={el.idInstrument.name} disp={el.disp} inUse={el.inUse}
+							<CardI key={i} title={el.idInstrument.name} cod={el.idInstrument.cod} inUse={el.inUse}
 								buttonC={inUse.length ? <button className="button-primary" style={{ backgroundColor: "red", borderColor: "red" }} onClick={() => deleteInUseUser(el.idInstrument._id)}>Devolver</button> : null}
 							/>
 						))

@@ -52,17 +52,9 @@ const Registro = (props) => {
                         <Form.Control required type="password" placeholder="" value={password} onChange={(e) => setPassword(e.target.value)} />
                     </Col>
 
-<<<<<<< HEAD
-                        </Row>
-                        <div id="btn1"><button type="submit" className="button-primary">Registrarse</button></div>
-                    </Form>
-                </Modal.Body>
-            </Modal>
-=======
                 </Row>
                 <div id="btn1"><button type="submit" className="button-primary">Registrarse</button></div>
             </Form>
->>>>>>> a61d051fa1d219664c084eabdc8f907a8bb1f3ef
 
         </>
     );

@@ -12,6 +12,7 @@ function Login() {
     const [estadoModal1, cambiarestadoModal1] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
 
     const navigate = useNavigate();
@@ -20,6 +21,7 @@ function Login() {
 
     const submitData = (e) => {
         e.preventDefault();
+        setIsLoading(true);
 
         login.login({
             email: email,
@@ -30,6 +32,7 @@ function Login() {
                 // const rolJson = JSON.stringify(res.res.rol);
                 sessionStorage.setItem('rol', res.res.rol);
                 sessionStorage.setItem('token', res.token);
+                setIsLoading(false);
                 navigate('/');
             }
         });
@@ -57,7 +60,7 @@ function Login() {
                             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" required />
                             <div id="emailHelp" className="form-text"> ¿Has olvidado tu contraseña? </div>
                         </div>
-                        <div id="btn1"><button type="submit" className="button-primary">Iniciar Sesion</button></div>
+                        <div id="btn1"><button type="submit" disabled={isLoading} className="button-primary">{!isLoading?'Iniciar Sesion':'Iniciando sesion...'}</button></div>
 
                         <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
                         </div>

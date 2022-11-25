@@ -28,9 +28,8 @@ const NavBar = () => {
 
       <ul id='opciones'>
         <li id="Navmvl">
-          <ToggleBar onClick={() => setToggle(!Toggle)} />
-          <ul show={Toggle}>
-            {/* {console.log(Toggle)} */}
+          <ToggleBar />
+          <ul>
             <li>
               {
                 pathName.pathname !== '/profile' ?
