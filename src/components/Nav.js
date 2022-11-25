@@ -46,25 +46,25 @@ export default function Nav() {
           <div class="item" id="dashboard">
             <a class="link" href="/admin">
               {/* <div class="icon"><img src="../../resources/img/icons8-dashboard-layout-material-outlined/icons8-dashboard-layout-48.png"/></div> */}
-              <div class="title">Dashboard <img src={Istatics} alt="img de usuarios" /></div>
+              <div class="title"><img src={Istatics} alt="img de usuarios" />Dashboard</div>
             </a>
           </div>
           <div class="item" id="users">
             <a class="link" onClick={() => handleNavigate('/admin/users')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-carrete-de-película-material-outlined/icons8-carrete-de-película-48.png"/></div> */}
-              <div class="title">Usuarios <img src={Iusers} alt="img de usuarios" /></div>
+              <div class="title"><img src={Iusers} alt="img de usuarios" />Usuarios</div>
             </a>
           </div>
           <div class="item" id="instruments">
             <a class="link" onClick={() => handleNavigate('/admin/instruments')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
-              <div class="title">Instrumentos <img src={Iins} alt="img de usuarios" /></div>
+              <div class="title"><img src={Iins} alt="img de usuarios" />Instrumentos</div>
             </a>
           </div>
           <div class="item" id="instruments">
             <a class="link" onClick={() => handleNavigate('/admin/requests')}>
               {/* <div class="icon"><img src="../../resources/img/icons8-comunicación-material-outlined/icons8-comunicación-48.png"/></div> */}
-              <div class="title">Solicitudes <img src={Ireq} alt="img de usuarios" /></div>
+              <div class="title"><img src={Ireq} alt="img de usuarios" />Solicitudes</div>
             </a>
           </div>
         </div>
