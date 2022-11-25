@@ -60,6 +60,11 @@
     justify-content: center;
     height: 45px;
 }
+.btn1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .btn {
 

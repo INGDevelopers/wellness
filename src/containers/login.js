@@ -60,7 +60,7 @@ function Login() {
                             <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" className="form-control" id="exampleInputPassword1" required />
                             <div id="emailHelp" className="form-text"> ¿Has olvidado tu contraseña? </div>
                         </div>
-                        <div id="btn1"><button type="submit" disabled={isLoading} className="button-primary">{!isLoading?'Iniciar Sesion':'Iniciando sesion...'}</button></div>
+                        <div id="btn1"><button type="submit" disabled={isLoading} className="button-primary">{!isLoading ? 'Iniciar Sesion' : 'Iniciando sesion...'}</button></div>
 
                         <div style={{ marginTop: "150px", display: "flex", justifyContent: "center" }} className="form-text">
                         </div>
@@ -72,7 +72,7 @@ function Login() {
                 </div>
             </div>
 
-            <ModalM className="modal-div" show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} element={<Registro />} />
+            <ModalM size="bg" className="modal-div" show={estadoModal1} animation={true} onHide={() => cambiarestadoModal1(false)} element={<Registro />} />
 
         </div >
     );
